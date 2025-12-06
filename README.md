@@ -34,7 +34,7 @@ screenshots/ → proof of work
 git clone https://github.com/rabiya20/laravel-50-days.git
 
 ## Step 2: Go to app folder
-cd laravel-50-days/laravel-app
+cd laravel-50-days/myapp
 
 ## Step 3: Install dependencies
 composer install
