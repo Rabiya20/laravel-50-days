@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    // day 03
     public function index() {
         return view('user.index');   
     }
@@ -16,5 +17,12 @@ class UserController extends Controller
         ]);
         $name = $request->name ?? "Guest";
         return "<h1>Hello " . $name . "</h1>";
+    }
+
+    // day 04
+    public function profile($name = "Rabia") {
+        $skills = ["HTML", "CSS", "JavaScript", "PHP", "Laravel"];
+        $hobbies = ["Reading", "Writing", "Coding", "Travelling", "Cooking"];
+        return view('profile_2', compact('name', 'skills', 'hobbies'));
     }
 }

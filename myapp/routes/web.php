@@ -116,3 +116,6 @@ Route::controller(TestController::class)->group(function () {
 
 Route::get('/enter', [UserController::class, 'index']);
 Route::post('/user_name', [UserController::class, 'print_user_name']);
+
+// day 04
+Route::get('/profile2/{name?}', [UserController::class, 'profile']);
