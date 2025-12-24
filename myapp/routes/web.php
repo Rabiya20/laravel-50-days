@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -100,3 +102,17 @@ Route::get('/invoice/{id}', function ($id) {
 // Route::fallback(function () {
 //     return "<h1>404 Not Found</h1>";
 // });
+
+// day 03
+Route::get('/test', [TestController::class, 'index']);
+
+// group routes
+Route::controller(TestController::class)->group(function () {
+    Route::get('/test', 'index');
+    Route::get('/show', 'show');
+    Route::get('/make', 'create');
+    Route::get('/destroy', 'destroy');
+});
+
+Route::get('/enter', [UserController::class, 'index']);
+Route::post('/user_name', [UserController::class, 'print_user_name']);
