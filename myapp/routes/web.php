@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TestlayoutController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -119,3 +120,11 @@ Route::post('/user_name', [UserController::class, 'print_user_name']);
 
 // day 04
 Route::get('/profile2/{name?}', [UserController::class, 'profile']);
+
+// day 05
+Route::get('/home', [UserController::class, 'home']);
+Route::get('/about', [UserController::class, 'about']);
+Route::get('/contact', [UserController::class, 'contact']);
+Route::get('/website_home', [TestlayoutController::class, 'website_home']);
+Route::get('/website_about', [TestlayoutController::class, 'website_about']);
+Route::get('/website_contact', [TestlayoutController::class, 'website_contact']);

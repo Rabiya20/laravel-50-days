@@ -25,4 +25,25 @@ class UserController extends Controller
         $hobbies = ["Reading", "Writing", "Coding", "Travelling", "Cooking"];
         return view('profile_2', compact('name', 'skills', 'hobbies'));
     }
+
+    // day 05
+    public function home()
+    {
+        return view('layout-app.pages.home');
+    }
+
+    public function about()
+    {
+        $skills = ["HTML", "CSS", "JavaScript", "PHP", "Laravel"];
+        $hobbies = ["Reading", "Writing", "Coding", "Travelling", "Cooking"];
+
+        return view('layout-app.pages.about', compact('skills', 'hobbies'));
+    }
+
+    public function contact()
+    {
+        return view('layout-app.pages.contact');
+    }
+
+
 }
