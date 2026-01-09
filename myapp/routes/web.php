@@ -128,3 +128,6 @@ Route::get('/contact', [UserController::class, 'contact']);
 Route::get('/website_home', [TestlayoutController::class, 'website_home']);
 Route::get('/website_about', [TestlayoutController::class, 'website_about']);
 Route::get('/website_contact', [TestlayoutController::class, 'website_contact']);
+
+// day 06
+Route::post('/contact-submit', [TestlayoutController::class, 'contact_submit']);
