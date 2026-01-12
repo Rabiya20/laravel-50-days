@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TestlayoutController;
+use App\Http\Controllers\ProjectoneController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -131,3 +132,12 @@ Route::get('/website_contact', [TestlayoutController::class, 'website_contact'])
 
 // day 06
 Route::post('/contact-submit', [TestlayoutController::class, 'contact_submit']);
+
+// day 07
+Route::get('/project-form', [ProjectoneController::class, 'form'])->name('project.form');
+Route::post('/project-submit', [ProjectoneController::class, 'submit'])->name('project.submit');
+Route::get('/project-contacts', [ProjectoneController::class, 'list'])->name('project.contacts');
+Route::get('/project-edit/{id}', [ProjectoneController::class, 'edit'])->name('project.edit');
+Route::post('/project-update/{id}', [ProjectoneController::class, 'update'])->name('project.update');
+Route::get('/project-delete/{id}', [ProjectoneController::class, 'delete'])->name('project.delete');
+Route::post('/project-clear', [ProjectoneController::class, 'clear'])->name('project.clear');
